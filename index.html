@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- 移动端修改视口 -->
+	<meta name="viewport" content="width=device-width">
+	<title>weather</title>
+	<!-- 引入css文件 -->
+	<link rel="stylesheet" href="css/index.css">
+	<link rel="shortcut icon" href="img/0.png">
+	<!-- 引入rem.js -->
+	<script src="js/rem.js"></script>
+	<script src="font/iconfont.js"></script>
+	<script src="js/jquery3.2.1.min.js"></script>
+	<script src="js/index.js"></script>
+</head>
+<style type="text/css">
+.icon {
+   width: 1em; height: 1em;
+   vertical-align: -0.15em;
+   fill: currentColor;
+   overflow: hidden;
+}
+</style>
+<body>
+	<!-- 屏幕开始 -->
+	<div class="screen">
+		<div class="header"></div>
+		<div class="box">
+			<h2>空气</h2>
+			<h3>轻度污染</h3>
+		</div>
+		<div class="wendu"></div>
+		<div class="tianqi"></div>
+		<!-- &nbsp表示空格 -->
+	    <div class="shidu">湿度&nbsp;28%</div>
+	    <div class="yijian">天冷了，注意保暖</div>
+	</div>
+	<!-- 屏幕结束 -->
+	<!-- 天气开始 -->
+	<div class="con1">
+		<div class="content">
+			<div class="top">
+				<span class="day">今天</span>
+				<div class="temperature">
+					<span class="high" id=dat_high_temperature></span>
+					/
+					<span class="low" id=dat_low_temperature></span>
+					℃
+				</div>
+			</div>
+			<div class="bottom">
+				<span class="weather" id=dat_condition></span>
+				<div class="pic" id="dat_weather_icon_id"></div>
+		    </div>
+		</div>
+		<div class="content">
+			<div class="top">
+				<span class="day">明天</span>
+				<div class="temperature">
+					<span class="high" id="tomorrow_high_temperature"></span>
+					/
+					<span class="low"id="tomorrow_low_temperature"></span>
+					℃
+				</div>
+			</div>
+			<div class="bottom">
+				<span class="weather">晴</span>
+				<div class="pic" id="tomorrow_weather_icon_id"></div>
+		    </div>
+		</div>
+	</div>
+	<!-- 天气结束 -->
+	<!-- 实时天气开始 -->
+	<div class="con2">
+		<!-- 可进行拖动 -->
+		<div class="wrap" id="now">
+			<!-- <div class="now">
+				<h2 class="now_time">12:00</h2>
+				<div class="now_icon"></div>
+				<h3 class="now_temperature">-1°</h3>
+			</div> -->
+			
+
+
+		</div>
+	</div>
+	<!-- 实时天气结束 -->
+	<!-- 近期天气开始 -->
+	<div class="con3">
+		<div class="wrap" id="recent">
+			<!-- <div class="recent">
+				<div class="recent_time">
+					<span class="month">1</span>
+					/
+					<span class="data">15</span>
+				</div>
+				<div class="recent_weather">多云</div>
+				<h2 class="recent_pic"></h2>
+				<h3 class="recent_high">3°</h3>
+				<h4 class="recent_low">-12°</h4>
+				<h5 class="recent_wind">西北风</h5>
+				<h6 class="win_level">3级</h6>
+			</div> -->
+			<!-- <div class="recent">
+				<div class="recent_time">
+					<span class="month">1</span>
+					/
+					<span class="data">15</span>
+				</div>
+				<div class="recent_weather">多云</div>
+				<h2 class="recent_pic"></h2>
+				<h3 class="recent_high">3°</h3>
+				<h4 class="recent_low">-12°</h4>
+				<h5 class="recent_wind">西北风</h5>
+				<h6 class="win_level">3级</h6>
+			</div>
+			<div class="recent">
+				<div class="recent_time">
+					<span class="month">1</span>
+					/
+					<span class="data">15</span>
+				</div>
+				<div class="recent_weather">多云</div>
+				<h2 class="recent_pic"></h2>
+				<h3 class="recent_high">3°</h3>
+				<h4 class="recent_low">-12°</h4>
+				<h5 class="recent_wind">西北风</h5>
+				<h6 class="win_level">3级</h6>
+			</div>
+			<div class="recent">
+				<div class="recent_time">
+					<span class="month">1</span>
+					/
+					<span class="data">15</span>
+				</div>
+				<div class="recent_weather">多云</div>
+				<h2 class="recent_pic"></h2>
+				<h3 class="recent_high">3°</h3>
+				<h4 class="recent_low">-12°</h4>
+				<h5 class="recent_wind">西北风</h5>
+				<h6 class="win_level">3级</h6>
+			</div>
+			<div class="recent">
+				<div class="recent_time">
+					<span class="month">1</span>
+					/
+					<span class="data">15</span>
+				</div>
+				<div class="recent_weather">多云</div>
+				<h2 class="recent_pic"></h2>
+				<h3 class="recent_high">3°</h3>
+				<h4 class="recent_low">-12°</h4>
+				<h5 class="recent_wind">西北风</h5>
+				<h6 class="win_level">3级</h6>
+			</div>
+			<div class="recent">
+				<div class="recent_time">
+					<span class="month">1</span>
+					/
+					<span class="data">15</span>
+				</div>
+				<div class="recent_weather">多云</div>
+				<h2 class="recent_pic"></h2>
+				<h3 class="recent_high">3°</h3>
+				<h4 class="recent_low">-12°</h4>
+				<h5 class="recent_wind">西北风</h5>
+				<h6 class="win_level">3级</h6>
+			</div> -->
+		</div>
+	</div>
+	<!-- 近期天气结束 -->
+	<!-- 选择城市 -->
+	<div class="city_box" style="display:none;">
+		<div class="sousuo-box">
+			<div class="search-box">
+				<svg class="icon" aria-hidden="true">
+  					<use xlink:href="#icon-sousuo"></use>
+				</svg>
+				<input type="text" placeholder="搜索市" class="text">
+			</div>
+			<div class="button">取消</div>
+		</div>
+		<div class="city" id="city">
+			<!-- <h1 class="title">热门城市</h1>
+			<div class="con">
+				<div class="son">北京</div>
+				<div class="son">上海</div>
+				<div class="son">广州</div>
+				<div class="son">深圳</div>
+				<div class="son">郑州</div>
+				<div class="son">西安</div>
+				<div class="son">南京</div>
+				<div class="son">杭州</div>
+				<div class="son">武汉</div>
+				<div class="son">成都</div>
+				<div class="son">沈阳</div>
+				<div class="son">天津</div>
+			</div> -->
+		</div>
+	</div>
+	<!-- 选择城市结束 -->
+</body>
+</html>
+<!-- 移动端布局步骤：
+1、修改视口
+2、引入rem.js
+3、修改设计稿的宽度 -->
+
+<!-- 1、html:超文本标记语言
+     2、css；层叠样式表
+     3、div+css布局
+     4、如何将html与css关联
+     5、如何将js引入到页面
+     6、标签：页面中用尖括号括起来的叫做标签
+     单标签、双标签
+     7、css语法：
+     选择器{
+	    属性：属性值；
+     }
+     8、class="box" .box
+     类名选择器
+     标签名         h2
+     标签选择器
+     父元素（空格） 子元素
+     .screen .box h3
+     后代选择器
+     9、选择器的作用：
+     选中页面中的元素
+     10、浮动、定位、字体、颜色（三种表示）、盒子模型（margin  padding）
+     -->
+
+
+     <!-- 后代选择器
+     伪类选择器
+     :nth-child(n) 选中第n个孩子
+     :first-child 选中第一个孩子
+     :last-child 选中最后一个孩子 -->
